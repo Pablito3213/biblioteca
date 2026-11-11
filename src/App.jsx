@@ -56,7 +56,7 @@ function App() {
 
             {/* TITULO DE SECCIONES */}
             <div className="titulo-secciones">
-                <h2>Panel de gestión</h2>
+                <h2>Panel Central</h2>
                 <p>Seleccioná para comenzar a trabajar.</p>
             </div>
 
