@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { UsersRound, BookOpen } from 'lucide-react';
 import Login from './loguing.jsx';
 import Socios from './socios.jsx';
 import Libro from './libros.jsx';
@@ -63,27 +64,29 @@ function App() {
             <div className="seccion-botones">
 
                 <button className="btn-gestion" onClick={() => setMostrarSocios(true)}>
-                     Socios
+                    <UsersRound />
+                    Socios
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarLibros(true)}>
-                     Libros
+                    <BookOpen />
+                    Libros
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarPagos(true)}>
-                     Pagos
+                    Pagos
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarUsuario(true)}>
-                     Usuarios
+                    Usuarios
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarDevoluciones(true)}>
-                     Devoluciones
+                    Devoluciones
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarPrestamos(true)}>
-                     Préstamos
+                    Préstamos
                 </button>
 
             </div>
