@@ -1,35 +1,35 @@
-
 /* ==============================
-   FONDO GENERAL
+   ESTILO GENERAL
 ============================== */
 
-body {
-    background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://www.educaciontrespuntocero.com/wp-content/uploads/2025/06/Libros-en-los-que-las-bibliotecas-son-las-protagonistas.jpg") center / contain no-repeat;
-    background-color: #1a1a1a;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
+* {
     box-sizing: border-box;
 }
 
-body > * {
-    position: relative;
-    z-index: 1;
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("/assets/image/fondo_biblioteca.png") no-repeat;
+    background-color: #1a1a1a;
+    color: #263b35;
+    font-family: Arial, sans-serif;
 }
 
 /* ==============================
-   CONTENEDOR PRINCIPAL
+   PAGINA PRINCIPAL
 ============================== */
 
 .container-biblioteca {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 60px;
-    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 45px 35px;
 }
 
 /* ==============================
@@ -39,25 +39,20 @@ body > * {
 .seccion-titulo {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px;
 }
 
 .nombre-biblioteca {
-    background-color: aquamarine;
-    color: cadetblue;
-    padding: 10px 20px;
-    border-radius: 11px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin: 0;
 }
 
 .subtitulo-biblioteca {
-    color: white;
-    background-color: rgba(0,0,0,0.65);
-    padding: 10px 24px;
-    border-radius: 30px;
+    color: #ffffff;
     font-size: 1.1rem;
-    width: max-content;
-    white-space: nowrap;
+    margin: 0;
 }
 
 /* ==============================
@@ -65,24 +60,23 @@ body > * {
 ============================== */
 
 .seccion-centro {
-    position: absolute;
-    left: 7%;
-    top: 250px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .tarjeta-cita {
-    background-color: rgba(0,0,0,0.75);
-    color: white;
-    padding: 24px;
+    background-color: white;
+    border-left: 5px solid #31966e;
+    color: #344b42;
+    padding: 25px;
     border-radius: 12px;
-    max-width: 450px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
 .cita-titulo {
-    color: #137e4c;
+    color: #25845e;
     font-weight: bold;
     margin-top: 0;
     font-size: 1.2rem;
@@ -91,43 +85,57 @@ body > * {
 .cita-texto {
     font-style: italic;
     font-size: 1.1rem;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .cita-autor {
-    color: #ccc;
+    color: #82918a;
     font-size: 0.9rem;
 }
 
 /* ==============================
-   BOTONES
+   BOTONES PRINCIPALES
 ============================== */
 
 .seccion-botones {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
 }
 
 .btn-gestion {
-    background-color: grey;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    outline: none;
-    border-radius: 120px;
-    width: 300px;
+    background-color: white;
+    color: #285442;
+    padding: 25px 15px;
+    border: 1px solid #e1eae5;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 90px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    font-size: 1.05rem;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
     transition: all 0.2s ease;
-    margin-right: 150px;
-    margin-top: 30px;
+    margin: 0;
 }
 
 .btn-gestion:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    background-color: #eaf5ef;
+    border-color: #31966e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.btn-cerrar {
+    background-color: #fff0f0;
+    color: #c74444;
+    border-color: #f3d5d5;
+}
+
+.btn-cerrar:hover {
+    background-color: #ffe1e1;
+    border-color: #e58b8b;
 }
 
 /* ==============================
@@ -138,17 +146,18 @@ body > * {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    padding: 20px;
 }
 
 .login-formulario {
-    padding: 30px;
-    max-width: 350px;
+    padding: 35px;
+    max-width: 380px;
     width: 100%;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -156,8 +165,8 @@ body > * {
 
 .login-titulo {
     text-align: center;
-    margin: 0 0 10px 0;
-    color: #333;
+    margin: 0 0 15px;
+    color: #285442;
 }
 
 .login-campo {
@@ -172,36 +181,29 @@ body > * {
 }
 
 .login-campo input {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 11px;
+    border-radius: 7px;
+    border: 1px solid #d5ded9;
 }
 
 .btn-login {
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #27845d;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
     margin-top: 10px;
 }
 
-/* ==============================
-   CERRAR SESION
-============================== */
-
-.btn-cerrar {
-    background-color: #ff4d4d;
-    margin-top: 20px;
+.btn-login:hover {
+    background-color: #1d6848;
 }
 
 /* ==============================
    VENTANAS Y MODALES
 ============================== */
-
-/* Propiedades compartidas de las ventanas */
 
 .modal-socios,
 .modal,
@@ -219,29 +221,25 @@ body > * {
     z-index: 9999;
 }
 
-/* Fondos */
-
 .modal-socios {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .pagos-overlay {
-    background-color: rgba(0,0,0,0.55);
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 .usuario-overlay {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .devoluciones-overlay {
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(0, 0, 0, 0.65);
 }
-
-/* Contenido de las ventanas */
 
 .contenido {
     background: white;
@@ -261,8 +259,6 @@ body > * {
     font-size: 20px;
 }
 
-/* Ventana de pagos */
-
 .pagos-ventana {
     background-color: #111;
     color: white;
@@ -271,8 +267,6 @@ body > * {
     padding: 30px;
     border-radius: 15px;
 }
-
-/* Ventana de usuarios */
 
 .usuario-ventana {
     background-color: white;
@@ -283,13 +277,101 @@ body > * {
     border-radius: 15px;
 }
 
-/* Ventana de devoluciones */
-
 .devoluciones-ventana {
     background-color: white;
     width: 600px;
     max-width: 90%;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================
+   DISEÑO PARA PANTALLAS PEQUEÑAS
+============================== */
+
+@media (max-width: 800px) {
+    .container-biblioteca {
+        padding: 30px 20px;
+    }
+
+    .seccion-botones {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nombre-biblioteca {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .seccion-botones {
+        grid-template-columns: 1fr;
+    }
+
+    .nombre-biblioteca {
+        font-size: 1.7rem;
+    }
+
+    .container-biblioteca {
+        padding: 25px 15px;
+    }
+}
+
+/* ==============================
+   TITULO DE SECCIONES
+============================== */
+
+.titulo-secciones {
+    margin-bottom: -10px;
+}
+
+.titulo-secciones h2 {
+    color: #285442;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.titulo-secciones p {
+    color: #82918a;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* BOTON CERRAR SESION EN EL ENCABEZADO */
+
+.seccion-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.btn-cerrar {
+    width: auto;
+    min-width: 140px;
+    padding: 14px 22px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* CERRAR SESION */
+
+.seccion-titulo {
+    display: block;
+}
+
+.acciones-finales {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.btn-cerrar {
+    width: auto;
+    min-width: 130px;
+    padding: 10px 18px;
+    margin: 0;
+    font-size: 0.9rem;
 }
