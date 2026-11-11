@@ -63,27 +63,27 @@ function App() {
             <div className="seccion-botones">
 
                 <button className="btn-gestion" onClick={() => setMostrarSocios(true)}>
-                    😎 Socios
+                     Socios
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarLibros(true)}>
-                    📖 Libros
+                     Libros
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarPagos(true)}>
-                    🪙 Pagos
+                     Pagos
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarUsuario(true)}>
-                    🕵 Usuarios
+                     Usuarios
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarDevoluciones(true)}>
-                    ✅ Devoluciones
+                     Devoluciones
                 </button>
 
                 <button className="btn-gestion" onClick={() => setMostrarPrestamos(true)}>
-                    📚 Préstamos
+                     Préstamos
                 </button>
 
             </div>
